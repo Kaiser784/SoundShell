@@ -61,7 +61,7 @@ func buildPayload(playlist string, URI []string) {
 		log.Fatalf("couldn't create playlist: %v", err)
 	}
 
-	fmt.Println("Created playlist:", playlistID.SimplePlaylist.ID)
+	fmt.Println("Created playlist:", playlistID.Name)
 
 	// List of track IDs to add to the playlist.
 	var trackIDs []spotify.ID
@@ -81,5 +81,5 @@ func buildPayload(playlist string, URI []string) {
 		log.Fatalf("couldn't add tracks to playlist: %v", err)
 	}
 
-	fmt.Printf("Added tracks to playlist: %+v", playlistID)
+	fmt.Println("Added tracks to playlist: ", playlistID.ID)
 }
